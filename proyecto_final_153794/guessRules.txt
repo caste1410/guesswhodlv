@@ -1,0 +1,55 @@
+deadMan(X):-
+  dead(X),
+  man(X).
+
+deadWoman(Y):-
+  dead(Y),
+  woman(Y).
+
+aliveMan(X):-
+  not deadMan(X),
+  man(X).
+
+aliveWoman(Y):-
+  not deadWoman(Y),
+  woman(Y).
+
+japaneseAliveWoman(Y):-
+  aliveWoman(Y),
+  japanese(Y).
+
+americanAliveWoman(Y):-
+  aliveWoman(Y),
+  american(Y).
+
+americanDeadWoman(Y):-
+  deadWoman(Y),
+  american(Y).
+
+mexicanDeadWoman(Y):-
+  deadWoman(Y),
+  mexican(Y).
+
+britishDeadMan(X):-
+  deadMan(X),
+  british(X).
+
+britishAliveMan(X):-
+  aliveMan(X),
+  british(X).
+
+britishAliveManNoGlasses(X):-
+  britishAliveMan(X),
+  not glasses(X).
+
+britishDeadManNoGlasses(X):-
+  britishDeadMan(X),
+  not glasses(X).
+
+britishAliveManGlasses(X):-
+  britishAliveMan(X),
+  glasses(X).
+
+britishDeadManGlasses(X):-
+  britishDeadMan(X),
+  glasses(X).
